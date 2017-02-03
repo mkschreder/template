@@ -14,11 +14,15 @@ vbell_msg "bell on %t (%n)"
 backtick 1 0 1 sh /home/martin/.screen-batstatus
 
 # look and feel
-caption always "%{= bb}%{+b w}%n %t %h %=%l %H %c %{= yk} %1`%% %{-}"
-hardstatus alwayslastline "%-Lw%{= BW}%50>%n%f* %t%{-}%+Lw%<%{-}"
+caption always "%{= bb}%{+b w}%n %t %h %=%l %H %c %{= yk} %2`%% %{-}"
+hardstatus alwayslastline "%-Lw%{= BW}%50>%n%f%t%{-}%+Lw%<%{-}"
 
 activity "Activity in %t(%n)"
 
 shelltitle "shell"
 shell -$SHELL
 termcapinfo xterm* ti@:te@
+
+bind ^h prev
+bind ^l next
+
